@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>さきがけ企画 | ポータル</title>
+    <meta name="description" content="さきがけ企画の事業ポータル。各サービスのLP・ニュース・クリエイター・お問い合わせをひとつに。" />
+    <!-- preconnect placeholder removed: empty href could cause errors on some hosts -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="theme-light.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Loading overlay: always shown ~0.5s on load -->
+    <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
+      <div class="loading-core">
+        <img class="loading-logo" src="assets/sakigake-logo.png" alt="SAKIGAKE" />
+        <div class="loading-progress" aria-hidden="true">
+          <div class="loading-progress-bar" id="loadingBar"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Intro overlay: page-open effect -->
+    <div id="introOverlay" class="intro-overlay" aria-hidden="true">
+      <div class="intro-core">
+        <img class="intro-logo" src="assets/sakigake-logo.png" alt="" />
+        <div class="intro-line"></div>
+      </div>
+    </div>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="logo" href="#top" aria-label="ホームに戻る">
+          <img class="logo-img" src="assets/sakigake-logo.png" alt="ロゴ" />
+        </a>
+        <nav class="nav">
+          <a href="#about">企業概要</a>
+          <a href="#news">お知らせ</a>
+          <a href="#creators">クリエイター</a>
+          <a href="#services">事業一覧</a>
+          <a href="#sns">SNS</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 2. 7秒毎に右へスクロールするカルーセル -->
+      <section class="section carousel-section" aria-label="各事業の紹介カルーセル">
+        <div class="container">
+          <div class="carousel-bg" id="carouselBg" aria-hidden="true"></div>
+          <button class="carousel-arrow prev" id="prevBtn" aria-label="前のバナーへ" type="button">&#10094;</button>
+          <button class="carousel-arrow next" id="nextBtn" aria-label="次のバナーへ" type="button">&#10095;</button>
+          <div class="carousel" id="carousel" role="listbox" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- 3. キャッチコピー -->
+      <section class="section hero reveal" id="catch" aria-label="キャッチコピー">
+        <div class="container hero-inner">
+          <div class="hero-frame">
+            <h1 class="headline">
+              先を拓く、価値を創る。
+            </h1>
+            <p class="subline"><span class="brand-roll">さきがけ企画</span>は多様なクリエイションを束ね、新しい選択肢を提案します。</p>
+          </div>
+          <nav class="hero-tabs" aria-label="セクションタブ">
+            <a class="hero-tab" href="#about" data-target="about">企業概要</a>
+            <a class="hero-tab" href="#news" data-target="news">お知らせ</a>
+            <a class="hero-tab" href="#creators" data-target="creators">クリエイター</a>
+            <a class="hero-tab" href="#services" data-target="services">事業一覧</a>
+            <a class="hero-tab" href="#sns" data-target="sns">SNS</a>
+            <a class="hero-tab" href="#contact" data-target="contact">お問い合わせ</a>
+          </nav>
+          <div id="tabContent" class="tab-content"></div>
+        </div>
+      </section>
+
+      <!-- 4. 概要 -->
+      <section class="section reveal tabbed" id="about" aria-label="企業概要">
+        <div class="container card">
+          <h2>企業概要</h2>
+          <dl class="company-info">
+            <dt>会社名</dt>
+            <dd>さきがけ企画</dd>
+
+            <dt>所在地</dt>
+            <dd>〒179-0072 東京都練馬区光が丘3-3-9 コーシャハイム207号室</dd>
+
+            <dt>代表者</dt>
+            <dd>代表　細野 魁／副代表　宮下 涼太</dd>
+
+            <dt>設立</dt>
+            <dd>2025年9月12日</dd>
+
+            <dt>事業内容</dt>
+            <dd>
+              <ul class="bullet">
+                <li>Webサイト制作</li>
+                <li>ロゴデザイン</li>
+                <li>Webサービスの企画・開発</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </section>
+
+      <!-- 5. お知らせ -->
+      <section class="section reveal tabbed" id="news" aria-label="お知らせ">
+        <div class="container card">
+          <div class="section-head">
+            <h2>お知らせ</h2>
+            <a class="link-more" href="#" aria-disabled="true">すべて表示（準備中）</a>
+          </div>
+          <ul class="news-list" id="newsList">
+            <!-- script.js から初期データが入ります -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- 1./6. 事業一覧 + クリエイター（LP遷移・連絡先・SNS） -->
+      <section class="section reveal tabbed" id="services" aria-label="事業一覧">
+        <div class="container">
+          <h2>事業一覧</h2>
+          <div class="grid" id="servicesGrid"><!-- JSで生成 --></div>
+        </div>
+      </section>
+
+      <section class="section reveal tabbed" id="creators" aria-label="クリエイター">
+        <div class="container card">
+          <h2>クリエイター</h2>
+          <div class="grid creators-grid" id="creatorsGrid"><!-- JSで生成 --></div>
+        </div>
+      </section>
+
+      <!-- 7. お問い合わせ -->
+      <section class="section reveal tabbed" id="contact" aria-label="お問い合わせ">
+        <div class="container card">
+          <h2>お問い合わせ</h2>
+          <form class="form" method="post" action="mailto:contact@example.com" enctype="text/plain">
+            <div class="form-row">
+              <label for="name">お名前</label>
+              <input id="name" name="name" type="text" required />
+            </div>
+            <div class="form-row">
+              <label for="email">メールアドレス</label>
+              <input id="email" name="email" type="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">お問い合わせ内容</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="btn primary" type="submit">送信する</button>
+            </div>
+          </form>
+          <p class="muted small">※ 実運用の送信先や自動返信は後ほど接続します。</p>
+        </div>
+      </section>
+
+      <!-- 8. SNS -->
+      <section class="section reveal tabbed" id="sns" aria-label="SNS">
+        <div class="container card">
+          <h2>SNS</h2>
+          <div class="sns-grid" id="snsGrid"></div>
+        </div>
+      </section>
+
+      <!-- 9. ご相談・お問い合わせCTA -->
+      <section class="section cta reveal" aria-label="ご相談・お問い合わせ">
+        <div class="container cta-inner">
+          <h2>ご相談・お問い合わせ</h2>
+          <p>新規事業の立ち上げ、改善のご相談などお気軽に。</p>
+          <a class="btn primary" href="#contact">お問い合わせへ</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="small muted">© さきがけ企画</p>
+        <a href="#top" class="small">ページの先頭へ</a>
+      </div>
+    </footer>
+  </body>
+  </html>

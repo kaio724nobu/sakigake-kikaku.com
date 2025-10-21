@@ -1,0 +1,77 @@
+:root {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --panel-2: #f7f9fc;
+  --text: #1a2130;
+  --muted: #606a78;
+  --primary: #3d8bff;
+  --primary-2: #5ce6ce;
+  --ring: rgba(61, 139, 255, 0.3);
+}
+
+body {
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 10% -10%, rgba(61,139,255,.10), transparent),
+              radial-gradient(1000px 700px at 120% 10%, rgba(92,230,206,.08), transparent),
+              var(--bg);
+}
+
+.site-header {
+  background: linear-gradient(to bottom, rgba(255,255,255,.9), rgba(255,255,255,.7));
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.nav a:hover { background: rgba(0,0,0,.06); }
+
+.card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+.carousel { background: transparent; }
+.slide {
+  background: linear-gradient(145deg, #ffffff, #f7f9fc);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+.slide .label {
+  background: rgba(0,0,0,.5);
+  border: 1px solid rgba(0,0,0,.12);
+  color: #f7fbff;
+}
+
+.service-card, .creator-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+.service-card:hover, .creator-card:hover {
+  border-color: rgba(61,139,255,.35);
+  box-shadow: 0 16px 36px rgba(0,0,0,.12);
+}
+.service-thumb { border: 1px solid rgba(0,0,0,.08); }
+
+.news-item {
+  background: rgba(0,0,0,.03);
+  border: 1px solid rgba(0,0,0,.08);
+}
+.badge { border: 1px solid rgba(0,0,0,.12); background: rgba(61,139,255,.08); color: #226bff; }
+
+.sns-card { background: rgba(255,255,255,.9); border: 1px solid rgba(0,0,0,.08); }
+
+.cta {
+  background: linear-gradient(180deg, rgba(255,255,255,.6), rgba(255,255,255,.9));
+  border-top: 1px solid rgba(0,0,0,.06);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.form input, .form textarea {
+  background: #ffffff;
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,.12);
+}
+.form input:focus, .form textarea:focus { box-shadow: 0 0 0 4px var(--ring); border-color: #7fb3ff; }
+
+.site-footer { border-top: 1px solid rgba(0,0,0,.08); background: #f7f9fc; }
+
